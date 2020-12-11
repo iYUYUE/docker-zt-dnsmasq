@@ -1,8 +1,12 @@
 FROM alpine:3.9
 
-RUN apk add --no-cache dnsmasq bash
+RUN apk add --no-cache bash python3 dnsmasq
 COPY data/entrypoint /entrypoint
 RUN chmod 755 /entrypoint
+
+COPY scripts/zerotier.py /mnt/scripts/zerotier.py
+COPY scripts/update.sh /etc/periodic/1min/update.sh
+RUN chmod +x /etc/periodic/1min/update.sh
 
 ENV DNSMASQ_HOME /mnt/dnsmasq
 WORKDIR ${DNSMASQ_HOME}
