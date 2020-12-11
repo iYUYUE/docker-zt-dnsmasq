@@ -22,5 +22,5 @@ main() {
     run_dnsmasq "$@";;
   esac
 }
-
+crond
 main "$@"
