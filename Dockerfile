@@ -8,7 +8,6 @@ RUN chmod 755 /entrypoint
 COPY script/zerotier.py /mnt/scripts/zerotier.py
 COPY script/update.sh /etc/periodic/1min/update.sh
 RUN chmod +x /etc/periodic/1min/update.sh
-RUN /etc/periodic/1min/update.sh
 RUN touch /etc/zerotier_hosts
 
 ENV DNSMASQ_HOME /mnt/dnsmasq
