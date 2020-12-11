@@ -1,9 +1,8 @@
 #!/bin/bash
 set -e
-parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 echo "Retrieving Network Inventory..."
-python3 "$parent_path/zerotier.py" --refresh
+python3 /mnt/scripts/zerotier.py --refresh
 
 echo "Restarting dnsmasq service..."
 if hash systemctl 2>/dev/null; then
