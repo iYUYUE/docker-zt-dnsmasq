@@ -181,7 +181,10 @@ class ZeroTierInventory(object):
             self.include_offline = os.environ.get('ZT_INCLUDEOFFLINE')
             if self.include_offline in ('False', 'false', '0'):
                 self.include_offline = False
-
+        if os.environ.get('ZT_DOMAIN'):
+            self.domain = os.environ.get('ZT_DOMAIN')
+        if os.environ.get('ZT_HOST_FILE'):
+            self.hosts = os.environ.get('ZT_HOST_FILE')
 
 if __name__ == '__main__':
     ZeroTierInventory()
