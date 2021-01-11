@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:edge
 
 RUN touch /etc/zerotier_hosts
 RUN apk add --no-cache bash python3 dnsmasq
