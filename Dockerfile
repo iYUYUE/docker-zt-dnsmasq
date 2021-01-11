@@ -1,7 +1,7 @@
 FROM alpine:edge
 
 RUN touch /etc/zerotier_hosts
-RUN apk add --no-cache bash python3 dnsmasq
+RUN apk add --no-cache bash python3 py3-pip dnsmasq
 RUN pip3 install requests
 COPY data/entrypoint /entrypoint
 RUN chmod 755 /entrypoint
